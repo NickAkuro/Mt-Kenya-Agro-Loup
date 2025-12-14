@@ -1,0 +1,213 @@
+.products-page {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 100%);
+  border-radius: 12px;
+}
+
+.products-header h1 {
+  color: #1b4332;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.products-header p {
+  color: #2d6a4f;
+  font-size: 1.2rem;
+}
+
+.products-controls {
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  border: 2px solid #74c69d;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #74c69d;
+  background-color: white;
+  color: #2d6a4f;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #d8f3dc;
+  transform: translateY(-2px);
+}
+
+.filter-buttons button.active {
+  background-color: #2d6a4f;
+  color: white;
+  border-color: #2d6a4f;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(45, 106, 79, 0.2);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+.product-info {
+  padding: 2rem;
+}
+
+.product-info h3 {
+  color: #1b4332;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-info p {
+  color: #666;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.farmer-name {
+  font-weight: 600;
+  color: #2d6a4f;
+}
+
+.location,
+.quantity,
+.harvest-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-contact {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  background-color: #74c69d;
+  color: #1b4332;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #52b788;
+  transform: translateY(-2px);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #d8f3dc;
+  border-top: 5px solid #2d6a4f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-products {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .products-header h1 {
+    font-size: 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+  }
+
+  .filter-buttons button {
+    width: 100%;
+  }
+}
